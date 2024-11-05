@@ -3,10 +3,10 @@ Microsoft Website for Media Type and Bus Type Definitions, we will have to const
 https://docs.microsoft.com/en-us/previous-versions/windows/desktop/stormgmt/msft-physicaldisk?redirectedfrom=MSDN
 
 Required classes that need to be enabled in SCCM for this report to work properly
-Get-WmiObject -Namespace "Root\Microsoft\Windows\Storage" -Class "MSFT_Disk"
-Get-WmiObject -Namespace "Root\Microsoft\Windows\Storage" -Class "MSFT_Partition"
-Get-WmiObject -Namespace "Root\Microsoft\Windows\Storage" -Class "MSFT_PhysicalDisk"
-Get-WmiObject -Namespace "Root\Microsoft\Windows\Storage" -Class "MSFT_Volume"
+Get-CIMInstance -Namespace "Root\Microsoft\Windows\Storage" -ClassName "MSFT_Disk"
+Get-CIMInstance -Namespace "Root\Microsoft\Windows\Storage" -ClassName "MSFT_Partition"
+Get-CIMInstance -Namespace "Root\Microsoft\Windows\Storage" -ClassName "MSFT_PhysicalDisk"
+Get-CIMInstance -Namespace "Root\Microsoft\Windows\Storage" -ClassName "MSFT_Volume"
 */
 
 Declare @OperatingSystemFilter VARCHAR(Max) = '%NT%Workstation%';
